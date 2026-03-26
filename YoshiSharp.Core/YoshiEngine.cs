@@ -8,7 +8,7 @@ public class YoshiEngine
 {
     private readonly Dictionary<string, string> _dictionary = new()
     {
-        { "mlem", "public" },
+        { "mlem","public" },
         { "melon", "int" },
         { "tongue", "string" },
         { "berry", "bool" },
