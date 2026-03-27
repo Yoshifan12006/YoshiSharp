@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\YoshiSharp.Core\YoshiSharp.Core.csproj" />
+    <ProjectReference Include="..\YoshiSharp.Core\YF1.YoshiSharp.Core.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

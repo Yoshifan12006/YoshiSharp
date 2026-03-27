@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoshiSharp.Core", "YoshiSharp.Core\YoshiSharp.Core.csproj", "{59F9EDB0-32FC-461F-B93D-010C04145C47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YF1.YoshiSharp.Core", "YoshiSharp.Core\YF1.YoshiSharp.Core.csproj", "{59F9EDB0-32FC-461F-B93D-010C04145C47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoshiSharp.TestApp", "YoshiSharp.TestApp\YoshiSharp.TestApp.csproj", "{6E01A15D-E6BB-415B-B882-74728AA1B79A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YF1.YoshiSharp.TestApp", "YoshiSharp.TestApp\YF1.YoshiSharp.TestApp.csproj", "{6E01A15D-E6BB-415B-B882-74728AA1B79A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoshiSharp.CLI", "YoshiSharp.CLI\YoshiSharp.CLI.csproj", "{2AF593E5-9DE0-4C46-AFFA-CCB238EF6400}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YF1.YoshiSharp.CLI", "YoshiSharp.CLI\YF1.YoshiSharp.CLI.csproj", "{2AF593E5-9DE0-4C46-AFFA-CCB238EF6400}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,5 +58,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {630C6042-9568-4177-9071-BB7F3FDABB61}
 	EndGlobalSection
 EndGlobal

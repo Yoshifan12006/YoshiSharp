@@ -5,7 +5,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     
-    <PackageId>YoshiSharp.Core</PackageId>
+    <PackageId>YF1.YoshiSharp.Core</PackageId>
     <Version>1.0.0</Version>
     <Authors>CloneYoshifan1</Authors>
     <Description>A transpiler engine for the Yoshi# programming language.</Description>

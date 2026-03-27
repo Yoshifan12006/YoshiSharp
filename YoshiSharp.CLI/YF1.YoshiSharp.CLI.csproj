@@ -7,12 +7,12 @@
 		<Description>A C# transpiler for the Yoshi# language.</Description>
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>yoshi-run</ToolCommandName>
-		<PackageId>YoshiSharp.CLI</PackageId>
+		<PackageId>YF1.YoshiSharp.CLI</PackageId>
 		<Version>1.0.0</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\YoshiSharp.Core\YoshiSharp.Core.csproj" />
+		<ProjectReference Include="..\YoshiSharp.Core\YF1.YoshiSharp.Core.csproj" />
 	</ItemGroup>
 
 </Project>
