@@ -1,3 +1,5 @@
+# YoshiSharp Project!
+
 This project is made for being able to use Yoshi keywords in C#.
 When projects are ran with the YoshiSharp.Core package they will automatically be able to translate Yoshi keywords from .yoshi files into C# keywords.
 The YoshiSharp.CLI does the same thing (requires YoshiSharp.Core), though can be ran through command prompt.
