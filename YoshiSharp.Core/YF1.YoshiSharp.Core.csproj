@@ -7,9 +7,10 @@
     
     <PackageId>YF1.YoshiSharp.Core</PackageId>
     <Version>1.0.0</Version>
-    <Authors>CloneYoshifan1</Authors>
+    <Authors>Yoshifan1</Authors>
     <Description>A transpiler engine for the Yoshi# programming language.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <PackageProjectUrl>https://github.com/Yoshifan12006/YoshiSharp</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
