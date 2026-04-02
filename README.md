@@ -1,23 +1,50 @@
-# YoshiSharp Project!
+# 🦖 YoshiSharp Project!
 
-This project is made for being able to use Yoshi keywords in C#.
-When projects are ran with the YoshiSharp.Core package they will automatically be able to translate Yoshi keywords from .yoshi files into C# keywords.
-The YoshiSharp.CLI does the same thing (requires YoshiSharp.Core), though can be ran through command prompt.
+YoshiSharp is a fun project that allows you to write C# code using **Yoshi-themed keywords**.
 
-Keywords currently included in the dictionary used for this project:
+When a project runs with the `YoshiSharp.Core` package, `.yoshi` files are automatically translated into valid C# code.
 
-mlem -> public
-melon -> int
-tongue -> string
-berry -> bool
-gulp -> void
-Yoshi.Say -> Console.WriteLine
-Yoshi.Eat -> Console.ReadLine
-ha-pu -> if
-wah-hoo -> else
-stampede -> for
-flutter-jump -> while
+The `YoshiSharp.CLI` tool (which requires `YoshiSharp.Core`) provides the same functionality via the command line.
 
-NOTE: This project is fully developed by me (Yoshifan1).
-You can take credit for your modifications, but you CANNOT take credit for the base project or as a whole.
-Doing so may lead to copyright infringement, and actions will be taken as needed.
+---
+
+## ✨ Features
+
+- Write C# using custom Yoshi-style keywords
+- Automatic translation from `.yoshi` → C#
+- CLI support for command-line usage
+
+---
+
+## 📖 Keyword Dictionary
+
+| Yoshi Keyword | C# Equivalent        |
+|--------------|---------------------|
+| `mlem`       | `public`            |
+| `melon`      | `int`               |
+| `tongue`     | `string`            |
+| `berry`      | `bool`              |
+| `gulp`       | `void`              |
+| `Yoshi.Say`  | `Console.WriteLine` |
+| `Yoshi.Eat`  | `Console.ReadLine`  |
+| `ha-pu`      | `if`                |
+| `wah-hoo`    | `else`              |
+| `stampede`   | `for`               |
+| `flutter-jump` | `while`          |
+
+---
+
+## ⚠️ License & Usage Notice
+
+This project is fully developed by **Yoshifan1**.
+
+- You are allowed to modify this project and take credit for your modifications.
+- You **may NOT** take credit for the original/base project as a whole.
+
+Failure to comply may result in copyright infringement, and appropriate actions may be taken.
+
+---
+
+## 💚 Notes
+
+Have fun coding with Yoshi! 🦖✨
