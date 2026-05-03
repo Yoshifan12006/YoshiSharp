@@ -6,7 +6,7 @@
     <Nullable>enable</Nullable>
     
     <PackageId>YF1.YoshiSharp.Core</PackageId>
-    <Version>1.0.4</Version>
+    <Version>1.0.5</Version>
     <Authors>Yoshifan1</Authors>
     <Description>A transpiler engine for the Yoshi# programming language.</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
