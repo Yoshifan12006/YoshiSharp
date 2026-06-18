@@ -27,10 +27,17 @@ The `YoshiSharp.CLI` tool (which requires `YoshiSharp.Core`) provides the same f
 | `gulp`       | `void`              |
 | `Yoshi.Say`  | `Console.WriteLine` |
 | `Yoshi.Eat`  | `Console.ReadLine`  |
+| `Yoshi.Paint` | `ChangeYoshiColour`          |
 | `ha-pu`      | `if`                |
 | `wah-hoo`    | `else`              |
 | `stampede`   | `for`               |
 | `flutter-jump` | `while`          |
+| `ground-pound` | `try`          |
+| `catch-egg` | `catch`          |
+| `star-power` | `finally`          |
+| `egg` | `class`          |
+| `hatch (followed by bracket)` | `YoshiEngine.GetRandomEgg`          |
+| `hatch (followed by a space)` | `new`          |
 
 ---
 
@@ -47,6 +54,6 @@ Failure to comply may result in copyright infringement, and appropriate actions 
 
 ## 💚 Notes
 
-Have fun coding with Yoshi! 🦖✨
+Have fun coding with Yoshi!
 
 Yoshi is owned by Nintendo. I do not take credit for the character or design.
