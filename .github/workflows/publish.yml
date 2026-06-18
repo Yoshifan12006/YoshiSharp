@@ -1,0 +1,39 @@
+name: Publish YoshiSharp to NuGet
+
+on:
+  push:
+    tags:
+      - 'v*' # This triggers the script automatically whenever you create a Git Tag like v1.0.6
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    
+    # CRITICAL: This grants GitHub permission to request the secure OIDC token
+    permissions:
+      id-token: write
+      contents: read
+
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET SDK
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Matches your target .NET runtime
+
+    - name: Package Core and CLI
+      run: dotnet pack -c Release
+
+    # The magic step: Logs into NuGet securely without any passwords/keys
+    - name: NuGet Secure Login
+      uses: NuGet/login@v1
+      id: nuget_login
+      with:
+        user: your-actual-nuget-username # <-- Replace with your exact NuGet profile name
+
+    - name: Push Packages to NuGet Gallery
+      run: |
+        dotnet nuget push YoshiSharp.Core/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget_login.outputs.token }}
+        dotnet nuget push YoshiSharp.CLI/bin/Release/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ steps.nuget_login.outputs.token }}
