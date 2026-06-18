@@ -6,38 +6,52 @@ namespace YoshiSharp.Core;
 
 public class YoshiEngine
 {
-    private readonly Dictionary<string, string> _dictionary = new()
+    private readonly List<KeyValuePair<string, string>> _keywords = new()
     {
-        { "mlem", "public" },
-        { "melon", "int" },
-        { "tongue", "string" },
-        { "berry", "bool" },
-        { "sparkle", "double" },
-        { "gulp", "void" },
-        { "Yoshi.Say", "Console.WriteLine" },
-        { "Yoshi.Eat", "Console.ReadLine" },
-        { "Yoshi.Paint", "ChangeYoshiColour" },
-        { "hatch", "GetRandomEgg" },
-        { "ha-pu", "if" },
-        { "wah-hoo", "else" },
-        { "stampede", "for" },
-        { "flutter-jump", "while" }
+        new("mlem", "public"),
+        new("melon", "int"),
+        new("tongue", "string"),
+        new("berry", "bool"),
+        new("sparkle", "double"),
+        new("gulp", "void"),
+        new("Yoshi.Say", "Console.WriteLine"),
+        new("Yoshi.Eat", "Console.ReadLine"),
+        new("Yoshi.Paint", "ChangeYoshiColour"),
+        new("ha-pu", "if"),
+        new("wah-hoo", "else"),
+        new("stampede", "for"),
+        new("flutter-jump", "while"),
+        new("ground-pound", "try"),
+        new("catch-egg", "catch"),
+        new("star-power", "finally"),
+        new("egg", "class"),
+        new(@"hatch(?=\s*\()", "YoshiEngine.GetRandomEgg"),
+        new(@"hatch\b", "new")
     };
 
     public string Translate(string yoshiCode)
     {
+        if (string.IsNullOrEmpty(yoshiCode)) return yoshiCode;
+
         string translatedCode = yoshiCode;
 
-        foreach (var entry in _dictionary)
+        foreach (var entry in _keywords)
         {
-            // This pattern looks for the keyword ONLY if it is a whole word
-            // and NOT followed or preceded by other letters/numbers
-            string pattern = @"\b" + Regex.Escape(entry.Key) + @"\b(?=(?:[^""]*""[^""]*"")*[^""]*$)";
+            string pattern;
 
-            translatedCode = Regex.Replace(translatedCode, pattern, entry.Value);
+        if (entry.Key.StartsWith("hatch"))
+        {
+            pattern = entry.Key + @"(?=(?:[^""]*""[^""]*"")*[^""]*$)";
+        }
+        else
+        {
+            pattern = @"\b" + Regex.Escape(entry.Key) + @"\b(?=(?:[^""]*""[^""]*"")*[^""]*$)";
         }
 
-        return translatedCode;
+        translatedCode = Regex.Replace(translatedCode, pattern, entry.Value, RegexOptions.Singleline);
+    }
+
+    return translatedCode;
     }
 
     public async Task RunAsync(string yoshiCode)
@@ -45,9 +59,17 @@ public class YoshiEngine
         string cSharpCode = Translate(yoshiCode);
 
         var options = ScriptOptions.Default
-            .AddReferences(typeof(YoshiEngine).Assembly)
+            .AddReferences(typeof(Console).Assembly, typeof(YoshiEngine).Assembly)
             .AddImports("System", "YoshiSharp.Core", "YoshiSharp.Core.YoshiEngine");
-        await CSharpScript.RunAsync(cSharpCode, options);
+
+        try
+        {
+            var scriptState = await CSharpScript.RunAsync(cSharpCode, options);
+        }
+        catch (CompilationErrorException ex)
+        {
+            Console.WriteLine($"The engine stalled: {ex.Message}");
+        }
     }
 
     public static void ChangeYoshiColour(string colour)

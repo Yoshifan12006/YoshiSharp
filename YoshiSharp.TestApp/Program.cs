@@ -3,33 +3,25 @@ using YoshiSharp.Core;
 
 var engine = new YoshiEngine();
 
-string yoshiSource = @"
-Yoshi.Paint(""Yellow"");
-Yoshi.Say(""How many eggs should I try to hatch?"");
+string yoshiSource = """
+egg YoshiCharacter
+{
+    mlem tongue Name;
+    mlem tongue Color;
 
-tongue input = Yoshi.Eat();
-melon totalAttempts = int.Parse(input);
-melon successCount = 0;
-
-Yoshi.Paint(""Green"");
-flutter-jump (totalAttempts > 0) {
-
-    melon eggChance = hatch(1, 11); 
-    
-    ha-pu (eggChance > 5) {
-        Yoshi.Say(""Hatched a green egg!"");
-        successCount = successCount + 1;
+    mlem gulp Introduce()
+    {
+        Yoshi.Paint(Color);
+        Yoshi.Say("Mlem! I am " + Name + " and my color is " + Color + "!");
     }
-    wah-hoo {
-        Yoshi.Say(""Oh no, the egg was empty..."");
-    }
-    
-    totalAttempts = totalAttempts - 1;
 }
 
-Yoshi.Paint(""Pink"");
-Yoshi.Say(""Total eggs hatched: "" + successCount);
-";
+YoshiCharacter greenYoshi = hatch YoshiCharacter();
+greenYoshi.Name = "Yoshi";
+greenYoshi.Color = "Green";
+greenYoshi.Introduce();
+Yoshi.Paint("White");
+""";
 
 Console.WriteLine("--- Launching Yoshi# Engine ---");
 
