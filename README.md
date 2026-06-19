@@ -24,6 +24,7 @@ The `YoshiSharp.CLI` tool (which requires `YoshiSharp.Core`) provides the same f
 | `melon`      | `int`               |
 | `tongue`     | `string`            |
 | `berry`      | `bool`              |
+| `sparkle`      | `double`              |
 | `gulp`       | `void`              |
 | `Yoshi.Say`  | `Console.WriteLine` |
 | `Yoshi.Eat`  | `Console.ReadLine`  |
